@@ -16,6 +16,14 @@
 		84664E611D71F66600A575E8 /* scratch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84664E5E1D71F66600A575E8 /* scratch.wav */; };
 		84664E621D71F66600A575E8 /* grenade.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84664E5F1D71F66600A575E8 /* grenade.wav */; };
 		84664E641D71F77A00A575E8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84664E631D71F77A00A575E8 /* AVFoundation.framework */; };
+		846FE07E1D735FBC00219B58 /* Cadastro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FE07D1D735FBC00219B58 /* Cadastro.swift */; };
+		846FE0801D735FE200219B58 /* Musica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FE07F1D735FE200219B58 /* Musica.swift */; };
+		846FE0821D7360A400219B58 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FE0811D7360A400219B58 /* MainViewController.swift */; };
+		846FE0841D736A6600219B58 /* CelulaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FE0831D736A6600219B58 /* CelulaTableViewCell.swift */; };
+		846FE0861D73757200219B58 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FE0851D73757200219B58 /* TableViewCell.swift */; };
+		846FE08A1D73978600219B58 /* heartbeatenhanced.wav in Resources */ = {isa = PBXBuildFile; fileRef = 846FE0871D73978600219B58 /* heartbeatenhanced.wav */; };
+		846FE08B1D73978600219B58 /* phoneringing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 846FE0881D73978600219B58 /* phoneringing.mp3 */; };
+		846FE08C1D73978600219B58 /* cheer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 846FE0891D73978600219B58 /* cheer.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +38,14 @@
 		84664E5E1D71F66600A575E8 /* scratch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scratch.wav; sourceTree = "<group>"; };
 		84664E5F1D71F66600A575E8 /* grenade.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = grenade.wav; sourceTree = "<group>"; };
 		84664E631D71F77A00A575E8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		846FE07D1D735FBC00219B58 /* Cadastro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cadastro.swift; sourceTree = "<group>"; };
+		846FE07F1D735FE200219B58 /* Musica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Musica.swift; sourceTree = "<group>"; };
+		846FE0811D7360A400219B58 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		846FE0831D736A6600219B58 /* CelulaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelulaTableViewCell.swift; sourceTree = "<group>"; };
+		846FE0851D73757200219B58 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		846FE0871D73978600219B58 /* heartbeatenhanced.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heartbeatenhanced.wav; sourceTree = "<group>"; };
+		846FE0881D73978600219B58 /* phoneringing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = phoneringing.mp3; sourceTree = "<group>"; };
+		846FE0891D73978600219B58 /* cheer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cheer.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +80,11 @@
 		84664E3F1D71EAC700A575E8 /* Playlist */ = {
 			isa = PBXGroup;
 			children = (
+				846FE07C1D735AD000219B58 /* model */,
+				846FE07B1D735AC800219B58 /* controller */,
+				846FE07A1D735ABF00219B58 /* view */,
 				84664E401D71EAC700A575E8 /* AppDelegate.swift */,
-				84664E421D71EAC700A575E8 /* ViewController.swift */,
-				84664E441D71EAC700A575E8 /* Main.storyboard */,
 				84664E471D71EAC700A575E8 /* Assets.xcassets */,
-				84664E491D71EAC700A575E8 /* LaunchScreen.storyboard */,
 				84664E4C1D71EAC700A575E8 /* Info.plist */,
 				84664E521D71F42200A575E8 /* Supporting Files */,
 			);
@@ -86,11 +102,43 @@
 		84664E531D71F46100A575E8 /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				846FE0871D73978600219B58 /* heartbeatenhanced.wav */,
+				846FE0881D73978600219B58 /* phoneringing.mp3 */,
+				846FE0891D73978600219B58 /* cheer.wav */,
 				84664E5D1D71F66600A575E8 /* punch.wav */,
 				84664E5E1D71F66600A575E8 /* scratch.wav */,
 				84664E5F1D71F66600A575E8 /* grenade.wav */,
 			);
 			name = Music;
+			sourceTree = "<group>";
+		};
+		846FE07A1D735ABF00219B58 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				84664E441D71EAC700A575E8 /* Main.storyboard */,
+				84664E491D71EAC700A575E8 /* LaunchScreen.storyboard */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		846FE07B1D735AC800219B58 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				846FE0831D736A6600219B58 /* CelulaTableViewCell.swift */,
+				84664E421D71EAC700A575E8 /* ViewController.swift */,
+				846FE0811D7360A400219B58 /* MainViewController.swift */,
+				846FE0851D73757200219B58 /* TableViewCell.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		846FE07C1D735AD000219B58 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				846FE07D1D735FBC00219B58 /* Cadastro.swift */,
+				846FE07F1D735FE200219B58 /* Musica.swift */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,11 +199,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846FE08C1D73978600219B58 /* cheer.wav in Resources */,
 				84664E4B1D71EAC700A575E8 /* LaunchScreen.storyboard in Resources */,
 				84664E621D71F66600A575E8 /* grenade.wav in Resources */,
 				84664E481D71EAC700A575E8 /* Assets.xcassets in Resources */,
 				84664E461D71EAC700A575E8 /* Main.storyboard in Resources */,
+				846FE08A1D73978600219B58 /* heartbeatenhanced.wav in Resources */,
 				84664E601D71F66600A575E8 /* punch.wav in Resources */,
+				846FE08B1D73978600219B58 /* phoneringing.mp3 in Resources */,
 				84664E611D71F66600A575E8 /* scratch.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,8 +218,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846FE07E1D735FBC00219B58 /* Cadastro.swift in Sources */,
+				846FE0841D736A6600219B58 /* CelulaTableViewCell.swift in Sources */,
+				846FE0801D735FE200219B58 /* Musica.swift in Sources */,
 				84664E431D71EAC700A575E8 /* ViewController.swift in Sources */,
 				84664E411D71EAC700A575E8 /* AppDelegate.swift in Sources */,
+				846FE0861D73757200219B58 /* TableViewCell.swift in Sources */,
+				846FE0821D7360A400219B58 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +374,7 @@
 				84664E511D71EAC700A575E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
