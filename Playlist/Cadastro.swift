@@ -16,6 +16,9 @@ class Cadastro: NSObject, NSCoding {
         self.lista.append(Musica(nome: "punch"))        
         self.lista.append(Musica(nome: "scratch"))
         self.lista.append(Musica(nome: "grenade"))
+        self.lista.append(Musica(nome: "heartbeatenhanced"))
+        self.lista.append(Musica(nome: "phoneringing"))
+        self.lista.append(Musica(nome: "cheer"))
     }
     
     required init?(coder aDecoder: NSCoder) {

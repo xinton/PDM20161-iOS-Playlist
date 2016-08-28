@@ -8,22 +8,19 @@
 
 import Foundation
 
-class Musica: NSObject, NSCoding {
-    var nome:String!
+class Musica: NSObject {
+    var nome:String?
     
     override var description: String{
-        return self.nome
+        return self.nome!
     }
     
     init(nome:String) {
         self.nome = nome
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        self.nome = aDecoder.decodeObjectForKey("nome") as! String
+    override init() {
+        super.init()
     }
     
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self.nome, forKey: "nome")
-    }
 }

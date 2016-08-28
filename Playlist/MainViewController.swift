@@ -31,12 +31,16 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     // MARK: - Musica
-    var ButtonAudioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("punch", ofType: "wav")!)
+    var musica = Musica()
+    
+    //var ButtonAudioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("cheer", ofType: "wav")!)
+    
+    var ButtonAudioURL = NSURL()
     
     var ButtonAudioPlayer = AVAudioPlayer()
     
     
-    var BackgroundAudio = try! AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("grenade", ofType: "wav")!))
+    //var BackgroundAudio = try! AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("grenade", ofType: "wav")!))
     
     
     override func viewDidLoad() {
@@ -54,11 +58,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         // MARK: Musica
-        do {
-            try ButtonAudioPlayer = AVAudioPlayer(contentsOfURL: ButtonAudioURL)
-        } catch{
-            print(error)
-        }
+        //do {
+        //    try ButtonAudioPlayer = AVAudioPlayer(contentsOfURL: ButtonAudioURL)
+        //} catch{
+        //    print(error)
+        //}
         
         //BackgroundAudio.play()
         
@@ -85,31 +89,44 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func PlayAudio1() {
-        BackgroundAudio.play()
+    func onTapPlayAudio() {
+        self.PlayAudio1(self.musica)
+    }
+    
+    @IBAction func PlayAudio1(musica: Musica) {
+        
+        do {
+            
+            ButtonAudioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(musica.description, ofType: "wav")!)
+            try ButtonAudioPlayer = AVAudioPlayer(contentsOfURL: ButtonAudioURL)
+        } catch{
+            print(error)
+        }
+        
+        ButtonAudioPlayer.play()
     }
     
     @IBAction func Stop(sender: AnyObject) {
-        BackgroundAudio.stop()
-        BackgroundAudio.currentTime = 0
+        ButtonAudioPlayer.stop()
+        ButtonAudioPlayer.currentTime = 0
         PlayPause.setTitle("Play", forState: UIControlState.Normal)
     }
     
     
     @IBAction func Restart(sender: AnyObject) {
-        BackgroundAudio.stop()
-        BackgroundAudio.currentTime = 0
-        BackgroundAudio.play()
+        ButtonAudioPlayer.stop()
+        ButtonAudioPlayer.currentTime = 0
+        ButtonAudioPlayer.play()
         
     }
     
     @IBAction func PausePlay(sender: AnyObject) {
-        if (BackgroundAudio.playing == true){
-            BackgroundAudio.stop()
+        if (ButtonAudioPlayer.playing == true){
+            ButtonAudioPlayer.stop()
             PlayPause.setTitle("Play", forState:UIControlState.Normal)
         }
         else {
-            BackgroundAudio.play()
+            ButtonAudioPlayer.play()
             PlayPause.setTitle("Pause", forState:UIControlState.Normal)
         }
     }
@@ -125,11 +142,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tvMusicas.dequeueReusableCellWithIdentifier("celula", forIndexPath: indexPath) as! CelulaTableViewCell
         
-        cell.textLabel?.text = self.cadastro.get(indexPath.row).nome
+        //let musica:Musica! = self.cadastro.get(indexPath.row)
+        self.musica = self.cadastro.get(indexPath.row)
+        cell.textLabel?.text = musica.nome
         
         cell.PlayAudio.tag = indexPath.row
         
-        cell.PlayAudio.addTarget(self, action: #selector(MainViewController.PlayAudio1), forControlEvents: .TouchUpInside)
+        cell.PlayAudio.addTarget(self, action: #selector(MainViewController.onTapPlayAudio), forControlEvents: .TouchUpInside)
         
         return cell;
     }
