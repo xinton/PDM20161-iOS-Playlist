@@ -19,6 +19,10 @@ class CelulaTableViewCell: UITableViewCell {
         // Initialization code
     }
     
+    func PlayAudio1(sender: AnyObject) {
+        MainViewController().PlayAudio1(self.musica)
+    }
+    
    // @IBAction func PlayAudio1(sender: AnyObject) {
    //     MainViewController().PlayAudio1(self.musica.description)
    // }

@@ -10,13 +10,19 @@ import Foundation
 
 class Musica: NSObject {
     var nome:String?
+    var extensao:String?
     
     override var description: String{
         return self.nome!
     }
     
-    init(nome:String) {
+    var fileExtension: String{
+        return self.extensao!
+    }
+    
+    init(nome:String,extensao:String) {
         self.nome = nome
+        self.extensao = extensao
     }
     
     override init() {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="byt-Sv-Vkg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lmn-ld-Wm7">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--PlayList-->
         <scene sceneID="RCS-H2-AWi">
             <objects>
                 <viewController id="byt-Sv-Vkg" customClass="MainViewController" customModule="Playlist" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,21 +21,21 @@
                                 <rect key="frame" x="0.0" y="495" width="320" height="73"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfj-VV-mfu">
-                                        <rect key="frame" x="46" y="22" width="32" height="30"/>
+                                        <rect key="frame" x="8" y="22" width="115" height="30"/>
                                         <state key="normal" title="Stop"/>
                                         <connections>
                                             <action selector="Stop:" destination="byt-Sv-Vkg" eventType="touchUpInside" id="BDj-XK-Ou2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PW7-Dn-oxf">
-                                        <rect key="frame" x="248" y="22" width="50" height="30"/>
+                                        <rect key="frame" x="218" y="22" width="94" height="30"/>
                                         <state key="normal" title="Restart"/>
                                         <connections>
                                             <action selector="Restart:" destination="byt-Sv-Vkg" eventType="touchUpInside" id="Aid-6c-apa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Mr-Ys-Fwt">
-                                        <rect key="frame" x="145" y="22" width="30" height="30"/>
+                                        <rect key="frame" x="114" y="22" width="86" height="30"/>
                                         <state key="normal" title="Play"/>
                                         <connections>
                                             <action selector="PausePlay:" destination="byt-Sv-Vkg" eventType="touchUpInside" id="HqH-Sm-aIr"/>
@@ -44,18 +44,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ziI-Lm-eaN">
-                                <rect key="frame" x="43" y="26" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ph-Oi-S4s">
-                                <rect key="frame" x="221" y="26" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="salvar:" destination="byt-Sv-Vkg" eventType="touchUpInside" id="LF0-SC-3pe"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0oa-20-9Tc">
                                 <rect key="frame" x="0.0" y="64" width="320" height="423"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,16 +55,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FT-iM-sMj">
-                                                    <rect key="frame" x="215" y="7" width="72" height="30"/>
-                                                    <state key="normal" title="Play Audio"/>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d31-gF-4Nj">
-                                                    <rect key="frame" x="74" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="213" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FT-iM-sMj">
+                                                    <rect key="frame" x="229" y="7" width="72" height="30"/>
+                                                    <state key="normal" title="Play Audio"/>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -93,18 +81,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dTn-iV-ZfT"/>
+                    <navigationItem key="navigationItem" title="PlayList" id="dTn-iV-ZfT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="AW5-ow-7aw">
+                            <connections>
+                                <segue destination="Kbx-W6-DHo" kind="show" id="pC6-LP-UXH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="PlayPause" destination="4Mr-Ys-Fwt" id="PWR-n1-MMY"/>
-                        <outlet property="tfNome" destination="ziI-Lm-eaN" id="85X-x0-nVN"/>
                         <outlet property="tvMusicas" destination="0oa-20-9Tc" id="Uad-nb-vHx"/>
                         <outlet property="viewPlayer" destination="pgp-uO-A2e" id="zCX-zI-385"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zze-4t-npc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1061" y="382"/>
+            <point key="canvasLocation" x="1526" y="382"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="H2c-SN-vEO">
@@ -118,13 +111,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4a-ec-UW5">
-                                <rect key="frame" x="124" y="38" width="72" height="30"/>
-                                <state key="normal" title="Play Audio"/>
-                                <connections>
-                                    <action selector="PlayAudio1:" destination="Kbx-W6-DHo" eventType="touchUpInside" id="HRW-S1-2bZ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcE-4d-Y1M">
                                 <rect key="frame" x="139" y="438" width="42" height="30"/>
                                 <state key="normal" title="Pause"/>
@@ -146,6 +132,17 @@
                                     <action selector="Stop:" destination="Kbx-W6-DHo" eventType="touchUpInside" id="tWf-Rp-vQY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlq-Xn-TnU">
+                                <rect key="frame" x="145" y="222" width="30" height="30"/>
+                                <state key="normal" title="Pick"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4a-ec-UW5">
+                                <rect key="frame" x="119" y="110" width="72" height="39"/>
+                                <state key="normal" title="Play Audio"/>
+                                <connections>
+                                    <action selector="PlayAudio1:" destination="Kbx-W6-DHo" eventType="touchUpInside" id="HRW-S1-2bZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -153,11 +150,31 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="PlayPause" destination="jcE-4d-Y1M" id="UbM-8Z-855"/>
+                        <outlet property="pickSong" destination="Xlq-Xn-TnU" id="Cbj-Tu-Ej9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0J-Mw-9gc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1560" y="430"/>
+            <point key="canvasLocation" x="1973" y="382"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Axa-DT-Pwg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lmn-ld-Wm7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pXD-WS-CyT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="byt-Sv-Vkg" kind="relationship" relationship="rootViewController" id="Jf3-zL-Juw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uQm-6W-YgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1061" y="382"/>
         </scene>
     </scenes>
 </document>

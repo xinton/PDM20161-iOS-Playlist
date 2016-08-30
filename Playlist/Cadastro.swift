@@ -8,26 +8,18 @@
 
 import Foundation
 
-class Cadastro: NSObject, NSCoding {
+class Cadastro: NSObject {
     var lista: Array<Musica>!
     
     override init() {
         self.lista = Array<Musica>()
-        self.lista.append(Musica(nome: "punch"))        
-        self.lista.append(Musica(nome: "scratch"))
-        self.lista.append(Musica(nome: "grenade"))
-        self.lista.append(Musica(nome: "heartbeatenhanced"))
-        self.lista.append(Musica(nome: "phoneringing"))
-        self.lista.append(Musica(nome: "cheer"))
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        self.lista = aDecoder.decodeObjectForKey("lista") as! Array<Musica>
-    }
-    
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self.lista, forKey: "lista")
-    }
+        self.lista.append(Musica(nome: "punch",extensao:"wav"))
+        self.lista.append(Musica(nome: "scratch",extensao:"wav"))
+        self.lista.append(Musica(nome: "grenade",extensao:"wav"))
+        self.lista.append(Musica(nome: "heartbeatenhanced",extensao:"wav"))
+        self.lista.append(Musica(nome: "phoneringing",extensao:"mp3"))
+        self.lista.append(Musica(nome: "cheer",extensao:"wav"))
+    }    
     
     func add(p:Musica) {
         self.lista.append(p)

@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import MediaPlayer
 import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,MPMediaPickerControllerDelegate  {
     
     //Outlet por que este botao sera tanto para play e pause
     @IBOutlet weak var PlayPause: UIButton!
@@ -34,7 +35,9 @@ class ViewController: UIViewController {
             print(error)
         }
         
-        BackgroundAudio.play()
+        let mediaPicker = MPMediaPickerController(mediaTypes: .Music)
+        mediaPicker.delegate = self
+        presentViewController(mediaPicker, animated: true, completion: {})
         
     }
 
@@ -70,6 +73,20 @@ class ViewController: UIViewController {
             BackgroundAudio.play()
             PlayPause.setTitle("Pause", forState:UIControlState.Normal)
         }
+    }
+    
+    @IBOutlet weak var pickSong: UIButton!
+    
+    func mediaPicker(mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
+        
+        //User selected a/an item(s).
+        for mpMediaItem in mediaItemCollection.items {
+            print("Add \(mpMediaItem) to a playlist, prep the player, etc.")
+        }
+    }
+    
+    func mediaPickerDidCancel(mediaPicker: MPMediaPickerController) {
+        print("User selected Cancel tell me what to do")
     }
     
 

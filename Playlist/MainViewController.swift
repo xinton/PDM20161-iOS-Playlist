@@ -33,14 +33,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Musica
     var musica = Musica()
     
-    //var ButtonAudioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("cheer", ofType: "wav")!)
-    
     var ButtonAudioURL = NSURL()
     
-    var ButtonAudioPlayer = AVAudioPlayer()
-    
-    
-    //var BackgroundAudio = try! AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("grenade", ofType: "wav")!))
+    var ButtonAudioPlayer = AVAudioPlayer()  
     
     
     override func viewDidLoad() {
@@ -57,15 +52,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.cadastro = Cadastro()
         }
         
-        // MARK: Musica
-        //do {
-        //    try ButtonAudioPlayer = AVAudioPlayer(contentsOfURL: ButtonAudioURL)
-        //} catch{
-        //    print(error)
-        //}
-        
-        //BackgroundAudio.play()
-        
     }
     
     // MARK: - Persistencia em arquivos
@@ -75,12 +61,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         NSKeyedArchiver.archiveRootObject(self.cadastro, toFile: self.arquivo())
     }
     
-    @IBAction func salvar(sender: AnyObject) {
-        let nome = self.tfNome.text
-        let p = Musica(nome: nome!)
-        self.cadastro.add(p)
-        self.tvMusicas.reloadData()
-    }
     
     //MARK: - MUSICA
     
@@ -89,15 +69,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
-    func onTapPlayAudio() {
+    func onTapPlayAudio(sender: UIButton) {
+        self.musica = cadastro.get(sender.tag)
         self.PlayAudio1(self.musica)
     }
     
-    @IBAction func PlayAudio1(musica: Musica) {
-        
+    func PlayAudio1(musica: Musica) {
         do {
             
-            ButtonAudioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(musica.description, ofType: "wav")!)
+            ButtonAudioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(musica.description, ofType: musica.fileExtension)!)
             try ButtonAudioPlayer = AVAudioPlayer(contentsOfURL: ButtonAudioURL)
         } catch{
             print(error)
@@ -142,14 +122,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tvMusicas.dequeueReusableCellWithIdentifier("celula", forIndexPath: indexPath) as! CelulaTableViewCell
         
-        //let musica:Musica! = self.cadastro.get(indexPath.row)
-        self.musica = self.cadastro.get(indexPath.row)
-        cell.textLabel?.text = musica.nome
+        cell.musica = self.cadastro.get(indexPath.row)
+        
+        cell.lbNome.text = cell.musica.nome
         
         cell.PlayAudio.tag = indexPath.row
         
         cell.PlayAudio.addTarget(self, action: #selector(MainViewController.onTapPlayAudio), forControlEvents: .TouchUpInside)
         
         return cell;
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //if (segue.identifier)
     }
 }
