@@ -84,7 +84,7 @@
                     <navigationItem key="navigationItem" title="PlayList" id="dTn-iV-ZfT">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AW5-ow-7aw">
                             <connections>
-                                <segue destination="Kbx-W6-DHo" kind="show" id="pC6-LP-UXH"/>
+                                <segue destination="Kbx-W6-DHo" kind="show" identifier="add_musica" id="pC6-LP-UXH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -110,48 +110,10 @@
                     <view key="view" contentMode="scaleToFill" id="F7b-Ao-Cpe" customClass="view">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcE-4d-Y1M">
-                                <rect key="frame" x="139" y="438" width="42" height="30"/>
-                                <state key="normal" title="Pause"/>
-                                <connections>
-                                    <action selector="PausePlay:" destination="Kbx-W6-DHo" eventType="touchUpInside" id="t4z-j7-0K1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nM0-8T-JQN">
-                                <rect key="frame" x="217" y="438" width="50" height="30"/>
-                                <state key="normal" title="Restart"/>
-                                <connections>
-                                    <action selector="Restart:" destination="Kbx-W6-DHo" eventType="touchUpInside" id="D0x-DS-PY4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8BM-YX-WxG">
-                                <rect key="frame" x="57" y="438" width="32" height="30"/>
-                                <state key="normal" title="Stop"/>
-                                <connections>
-                                    <action selector="Stop:" destination="Kbx-W6-DHo" eventType="touchUpInside" id="tWf-Rp-vQY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xlq-Xn-TnU">
-                                <rect key="frame" x="145" y="222" width="30" height="30"/>
-                                <state key="normal" title="Pick"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4a-ec-UW5">
-                                <rect key="frame" x="119" y="110" width="72" height="39"/>
-                                <state key="normal" title="Play Audio"/>
-                                <connections>
-                                    <action selector="PlayAudio1:" destination="Kbx-W6-DHo" eventType="touchUpInside" id="HRW-S1-2bZ"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="bxO-Ht-OaX"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="PlayPause" destination="jcE-4d-Y1M" id="UbM-8Z-855"/>
-                        <outlet property="pickSong" destination="Xlq-Xn-TnU" id="Cbj-Tu-Ej9"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0J-Mw-9gc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

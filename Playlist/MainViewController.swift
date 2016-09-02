@@ -11,8 +11,6 @@ import AVFoundation
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var tfNome: UITextField!
-    
     @IBOutlet weak var tvMusicas: UITableView!
     @IBOutlet weak var viewPlayer: UIView!
     
@@ -44,23 +42,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tvMusicas.dataSource = self
         self.tvMusicas.delegate = self
         
-        let obj = NSKeyedUnarchiver.unarchiveObjectWithFile(self.arquivo())
         
-        if (obj != nil){
-            self.cadastro = obj as! Cadastro
-        }else{
-            self.cadastro = Cadastro()
-        }
+        self.cadastro = Cadastro()
+        
         
     }
-    
-    // MARK: - Persistencia em arquivos
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(true)
-        
-        NSKeyedArchiver.archiveRootObject(self.cadastro, toFile: self.arquivo())
-    }
-    
     
     //MARK: - MUSICA
     
@@ -134,6 +120,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //if (segue.identifier)
+        //if (segue.identifier == "add_musica"){
+        //    let view = segue.destinationViewController as! ViewController
+        //}
     }
 }
