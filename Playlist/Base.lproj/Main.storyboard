@@ -8,7 +8,7 @@
         <!--PlayList-->
         <scene sceneID="RCS-H2-AWi">
             <objects>
-                <viewController id="byt-Sv-Vkg" customClass="MainViewController" customModule="Playlist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="playlist" id="byt-Sv-Vkg" customClass="MainViewController" customModule="Playlist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qem-xI-5Vl"/>
                         <viewControllerLayoutGuide type="bottom" id="Ls0-K4-OZ4"/>
@@ -20,13 +20,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgp-uO-A2e">
                                 <rect key="frame" x="0.0" y="495" width="320" height="73"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfj-VV-mfu">
-                                        <rect key="frame" x="8" y="22" width="115" height="30"/>
-                                        <state key="normal" title="Stop"/>
-                                        <connections>
-                                            <action selector="Stop:" destination="byt-Sv-Vkg" eventType="touchUpInside" id="BDj-XK-Ou2"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PW7-Dn-oxf">
                                         <rect key="frame" x="218" y="22" width="94" height="30"/>
                                         <state key="normal" title="Restart"/>
@@ -41,8 +34,15 @@
                                             <action selector="PausePlay:" destination="byt-Sv-Vkg" eventType="touchUpInside" id="HqH-Sm-aIr"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfj-VV-mfu">
+                                        <rect key="frame" x="8" y="22" width="115" height="30"/>
+                                        <state key="normal" title="Stop"/>
+                                        <connections>
+                                            <action selector="Stop:" destination="byt-Sv-Vkg" eventType="touchUpInside" id="BDj-XK-Ou2"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.8406228489597074" green="0.88165834360477402" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0oa-20-9Tc">
                                 <rect key="frame" x="0.0" y="64" width="320" height="423"/>
@@ -84,7 +84,7 @@
                     <navigationItem key="navigationItem" title="PlayList" id="dTn-iV-ZfT">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AW5-ow-7aw">
                             <connections>
-                                <segue destination="Kbx-W6-DHo" kind="show" identifier="add_musica" id="pC6-LP-UXH"/>
+                                <action selector="pickMedia:" destination="byt-Sv-Vkg" id="KK7-UI-dJ0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

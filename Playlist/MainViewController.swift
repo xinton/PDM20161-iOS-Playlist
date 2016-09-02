@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import MediaPlayer
 import AVFoundation
 
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,MPMediaPickerControllerDelegate {
     
     @IBOutlet weak var tvMusicas: UITableView!
     @IBOutlet weak var viewPlayer: UIView!
@@ -49,6 +50,26 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     //MARK: - MUSICA
+    
+    @IBAction func pickMedia(sender: AnyObject) {            let mediaPicker = MPMediaPickerController(mediaTypes: .Music)
+            mediaPicker.delegate = self
+            presentViewController(mediaPicker, animated: true, completion: {})
+    }
+    
+    func mediaPicker(mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
+        
+        //User selected a/an item(s).
+        for mpMediaItem in mediaItemCollection.items {
+            print("Add \(mpMediaItem) to a playlist, prep the player, etc.")
+            //self.musica = mpMediaItem
+        }
+    }
+    
+    func mediaPickerDidCancel(mediaPicker: MPMediaPickerController) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
